@@ -19,7 +19,7 @@ npx skills add ndaemy/skills --skill '*' -g
 
 | 스킬 | 설명 | 사용 시점 |
 |------|------|----------|
-| [figma-mcp-bridge](skills/figma-mcp-bridge) | Figma MCP 미승인 클라이언트에서 tmux + Claude Code 브릿지로 Figma MCP에 접근 | Figma 디자인 파일 조회, 컴포넌트 구조 파악, 디자인 컨텍스트 추출이 필요할 때 |
+| [figma-mcp-bridge](skills/figma-mcp-bridge) | Figma MCP 미승인 클라이언트에서 승인된 CLI(Claude Code, Codex, Gemini CLI)를 tmux 브릿지로 Figma MCP에 접근 | Figma 디자인 파일 조회, 컴포넌트 구조 파악, 디자인 컨텍스트 추출이 필요할 때 |
 
 ## 스킬 구조
 
