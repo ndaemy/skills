@@ -269,12 +269,23 @@ MCP 호출이 인증 에러(`401`, `Authentication failed` 등)를 반환하면 
 
 기존 tmux 세션을 정리하고 "MCP 브릿지 실행 절차"의 Step 1부터 다시 시작한다.
 
-## 주요 Figma MCP 도구
+## Figma MCP 도구 목록
 
 | 도구 | 용도 | 비고 |
 |------|------|------|
-| `get_design_context` | 노드의 디자인 컨텍스트 (코드, 스크린샷, 메타데이터) | **가장 많이 사용**. 비용 높음 |
-| `get_metadata` | 노드의 구조 메타데이터 (ID, 이름, 위치, 크기) | 구조 파악용. 비용 낮음 |
+| `get_design_context` | React+Tailwind 기반 디자인→코드 변환 | **가장 많이 사용**. 비용 높음 |
+| `get_metadata` | 레이어 구조 메타데이터 (ID, 이름, 위치, 크기) | 가벼운 사전 조회용 |
+| `get_screenshot` | 선택 영역 스크린샷 캡처 | 시각적 레퍼런스용 |
+| `get_variable_defs` | 디자인 토큰 (색상, 간격, 타이포그래피) | 변수/스타일 조회 |
+| `get_figjam` | FigJam 다이어그램 → XML + 스크린샷 | FigJam 전용 |
+| `generate_diagram` | Mermaid 구문 → FigJam 다이어그램 생성 | 파일 컨텍스트 불필요 |
+| `get_code_connect_map` | Figma↔코드 컴포넌트 매핑 조회 | Code Connect |
+| `add_code_connect_map` | Figma↔코드 매핑 추가 | **호출 제한 없음** |
+| `create_design_system_rules` | 디자인 시스템 rules 파일 생성 | 1회성 설정 |
+| `get_code_connect_suggestions` | Code Connect 매핑 제안 | Figma 주도 호출 |
+| `send_code_connect_mappings` | 매핑 확인/확정 | Figma 주도 호출 |
+| `whoami` | 인증된 사용자 정보 조회 | 리모트 서버 전용. 호출 제한 없음 |
+| `generate_figma_design` | 웹앱 UI → Figma 디자인 캡처 | 리모트 서버 + 일부 클라이언트만. 호출 제한 없음 |
 
 ## 프롬프트 예시
 
