@@ -226,13 +226,20 @@ tmux send-keys -t figma-bridge Enter
 
 ### Step 5: 응답 수집
 
+idle 프롬프트가 다시 나타날 때까지 폴링하여 응답을 수집한다.
+
 ```bash
-# MCP 호출은 30~60초 소요될 수 있음
-sleep 60 && tmux capture-pane -t figma-bridge -p -S -200 | tail -80
+# 5초 간격 폴링, 최대 1분 대기 (generate_figma_design 사용 시 seq 1 36으로 3분까지 확장)
+for i in $(seq 1 12); do
+  tmux capture-pane -t figma-bridge -p | tail -3 | grep -q '❯\|›\|>' && break
+  sleep 5
+done
+tmux capture-pane -t figma-bridge -p -S -200 | tail -80
 ```
 
-- `-S -200`: 스크롤백 버퍼 200줄까지 캡처
-- 응답이 길면 `-S` 값을 늘린다
+- 응답이 오는 즉시 수집한다 (불필요한 대기 없음).
+- `generate_figma_design` 호출 시에는 `seq 1 36` (5초 × 36 = 3분)으로 타임아웃을 확장한다.
+- `-S -200`: 스크롤백 버퍼 200줄까지 캡처. 응답이 길면 `-S` 값을 늘린다.
 
 ### Step 6: 세션 정리
 
