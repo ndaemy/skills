@@ -17,9 +17,10 @@ npx skills add ndaemy/skills --skill '*' -g
 
 ## 스킬 목록
 
-| 스킬 | 설명 | 사용 시점 |
-|------|------|----------|
-| [figma-mcp-bridge](skills/figma-mcp-bridge) | Figma MCP 미승인 클라이언트에서 승인된 CLI(Claude Code, Codex, Gemini CLI)를 tmux 브릿지로 Figma MCP에 접근 | Figma 디자인 파일 조회, 컴포넌트 구조 파악, 디자인 컨텍스트 추출이 필요할 때 |
+| 스킬                                                    | 설명                                                                                                        | 사용 시점                                                                    |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| [figma-mcp-bridge](skills/figma-mcp-bridge)             | Figma MCP 미승인 클라이언트에서 승인된 CLI(Claude Code, Codex, Gemini CLI)를 tmux 브릿지로 Figma MCP에 접근 | Figma 디자인 파일 조회, 컴포넌트 구조 파악, 디자인 컨텍스트 추출이 필요할 때 |
+| [opencode-session-title](skills/opencode-session-title) | 현재 대화 문맥을 기반으로 OpenCode 세션 제목을 자동 생성하고 API로 갱신/검증                                | "이 세션의 제목을 업데이트해줘"처럼 현재 세션 타이틀 자동 정리가 필요할 때   |
 
 ## 스킬 구조
 
